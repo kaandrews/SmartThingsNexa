@@ -24,21 +24,17 @@ https://www.amazon.co.uk/gp/product/B00R2U8OEU
 To use this library add the EX_SwitchNexa.h and EX_SwitchNexa.cpp files to your Arduino library.
 The included Arduino sketch ST_Anything_Nexa433MHz_ESP8266WiFi.ino provides an example of how to use the library.
 
-To use the RF Transmitter I connect as below:
+If you want to power the NodeMCU through USB (this is what I do) then you can connect as below:
 
-NodeMCU D1  <---> RF Module DATA
+USB Supply <---> NodeMCU Micro USB
 
-+3.3v or 5v <---> RF Module VCC
+NodeMCU D1 <---> RF Module DATA
 
-Ground      <---> RF Module GND
+NodeMCU VV <---> RF Module VCC
 
-To improve range I recommend to use an external power source for the RF module rather than drawing power from the 3.3v pin of the NodeMCU.  Make sure you don't connect the NodeMCU to a 5v supply, only to 3.3v.
+NodeMCU G  <---> RF Module GND
 
-As well as the RF Transmitter module I made the following connections to power the NodeMCU:
-
-+3.3v     <---> NodeMCU 3V
-
-Ground    <---> NodeMCU G
+There are other options such as using an external power supply, I will leave you to figure out how to connect that.  Just remember not to provide too much voltage to the NodeMCU as it runs on 3.3v.
 
 The Nexa protocol is described in the library file, for more details please refer to my other Github project:
 https://github.com/kaandrews/Arduino-Nexa-Control
